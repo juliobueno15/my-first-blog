@@ -3,11 +3,38 @@
         <title>Ola's blog</title>
     </head>
     <body>
+        <div>
+
         <h1>Projeto Blog CETI-SC</h1>
         <h2>blog desenvolvido para treinamento no CETI-SC</h2>
         <h1><a href="/">Home</a></h1>
+
+        <div>
+
+
+        <div>
+
+        <h2>><a href="/"> Posts</a></h2>
+        {% for post in posts %}
+            <div>
+
+            <p>publicado em: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+
+            </div>
+        {% endfor %}
+
+        <div>
+
+
+        <div>
+
         <p>blog criado com base no tutorial django girls </p>
         <a href="https://djangogirls.org">link</a>
-        <ul><li>primeiro item</li><li>segundo item</li></ul>
+
+        <div>
+
+
     </body>
 </html>
