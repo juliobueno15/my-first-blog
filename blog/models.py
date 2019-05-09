@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 class Post(models.Model):
@@ -15,3 +16,13 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Accounts(models.Model):
+
+    name = models.CharField(max_length=150)
+    email = models.EmailField(max_length=254)
+    username = models.CharField(max_length=100, unique=True)
+    password = models.CharField(max_length=80)
+
+    def __unicode__(self):
+        return self.username
